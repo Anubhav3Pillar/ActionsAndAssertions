@@ -2,7 +2,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 public class ActionsSelectExample {
@@ -45,22 +44,22 @@ public class ActionsSelectExample {
 
         System.out.println("SoftAssert different options");
 
-        softAssert.assertEquals(select.getFirstSelectedOption(), "White");
+        softAssert.assertEquals(select.getFirstSelectedOption().getText(), "White");
 
         select.selectByIndex(2);
         Thread.sleep(2000);
 
-        softAssert.assertEquals(select.getFirstSelectedOption(), "Green");
+        softAssert.assertEquals(select.getFirstSelectedOption().getText(), "Green");
 
         select.selectByValue("10");
         Thread.sleep(2000);
 
-        softAssert.assertEquals(select.getFirstSelectedOption(), "Aqua");
+        softAssert.assertEquals(select.getFirstSelectedOption().getText(), "Aqua");
 
         select.selectByVisibleText("Voilet");
         Thread.sleep(2000);
 
-        softAssert.assertEquals(select.getFirstSelectedOption(), "Voilet");
+        softAssert.assertEquals(select.getFirstSelectedOption().getText(), "Voilet");
 
         softAssert.assertAll();
 
